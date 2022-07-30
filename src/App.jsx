@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import Header from './components/Header';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="bg-red-500">whats up man</div>
+    <BrowserRouter>
+      <Header />
+      <div className="p-6 text-3xl font-bold">content here btw</div>
+    </BrowserRouter>
   );
 }
 
