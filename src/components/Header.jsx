@@ -5,7 +5,7 @@ function Header() {
   const user = false;
 
   return (
-    <nav className="bg-cyan-600 drop-shadow-xl">
+    <nav className="bg-cyan-600 drop-shadow-xl border-b-4 border-black">
       <div className="container mx-auto p-10 flex justify-between items-center">
         <div>
           <Link to="/" className="text-4xl font-bold hover:text-gray-700 overline">
