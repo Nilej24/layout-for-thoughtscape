@@ -1,6 +1,15 @@
 import { Link } from 'react-router-dom';
 import { FaSignOutAlt, FaSignInAlt, FaUser } from 'react-icons/fa';
 
+function HeaderButton({ iconElement, text }) {
+  return (
+    <button className="flex items-center space-x-2 font-extrabold border-2 border-black px-6 py-3 rounded bg-red-500 hover:bg-red-600">
+      {iconElement}
+      <span>{text}</span>
+    </button>
+  );
+}
+
 function Header() {
   const user = false;
 
@@ -14,20 +23,11 @@ function Header() {
         </div>
         <div className="flex flex-col space-y-3 md:space-y-0 md:flex-row md:space-x-5">
           {!!user ? (
-            <button className="header-btn">
-              <FaSignOutAlt />
-              <span>sign out</span>
-            </button>
+            <HeaderButton iconElement={<FaSignOutAlt />} text='sign out' />
           ) : (
             <>
-              <button className="header-btn">
-                <FaSignInAlt />
-                <span>sign in</span>
-              </button>
-              <button className="header-btn">
-                <FaUser />
-                <span>register</span>
-              </button>
+              <HeaderButton iconElement={<FaSignInAlt />} text='sign in' />
+              <HeaderButton iconElement={<FaUser />} text='register' />
             </>
           )}
         </div>
