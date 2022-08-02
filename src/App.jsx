@@ -2,11 +2,18 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header';
 
+import SignIn from './pages/SignIn';
+import Register from './pages/Register';
+
 function App() {
   return (
     <BrowserRouter>
       <Header />
-      <div className="p-6 text-3xl font-bold">content here btw</div>
+      <Routes>
+        <Route path="/" element={<div>decks, yo</div>} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
     </BrowserRouter>
   );
 }
