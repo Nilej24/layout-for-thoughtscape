@@ -21,7 +21,7 @@ function Header() {
             ThoughtScape
           </Link>
         </div>
-        <div className="flex flex-col space-y-3 md:space-y-0 md:flex-row md:space-x-5">
+        <div className="hidden sm:flex space-y-0 flex-row space-x-2 md:space-x-5">
           {!!user ? (
             <HeaderButton iconElement={<FaSignOutAlt />} text='sign out' />
           ) : (
