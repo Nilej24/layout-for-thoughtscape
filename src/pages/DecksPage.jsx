@@ -1,11 +1,25 @@
-import { MdMenuBook } from 'react-icons/md';
+import { MdMenuBook, MdDelete } from 'react-icons/md';
+import { FaEdit, FaUserEdit } from 'react-icons/fa';
+
+function DeckButton({ iconElement, hoverText }) {
+  return (
+    <button class="rounded bg-cyan-600 p-3 text-lg hover:bg-cyan-700">
+      {iconElement}
+    </button>
+  );
+}
 
 function Deck({ name }) {
   return (
     <li>
-      <label className="flex items-center space-x-5 p-8 cursor-pointer hover:bg-gray-100">
+      <label className="flex items-center space-x-5 p-8 cursor-pointer hover:bg-gray-100 relative group">
         <input type="checkbox" className="w-6 h-6 shrink-0" />
         <span>{name}</span>
+        <div className="hidden group-hover:flex space-x-4 absolute right-8">
+          <DeckButton iconElement={<FaEdit />} />
+          <DeckButton iconElement={<FaUserEdit />} />
+          <DeckButton iconElement={<MdDelete />} />
+        </div>
       </label>
     </li>
   );
